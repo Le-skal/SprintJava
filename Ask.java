@@ -19,7 +19,7 @@ public class Ask {
         }
 
         if (age >= 130){
-            System.out.println("Toujours vivant???");
+            System.out.println("Toujours vivant?");
         }else if (age < 0){
             System.out.println("Deja avec un ecrans dans les mains??");
         }else if (age > 18){

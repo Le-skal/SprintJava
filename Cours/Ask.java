@@ -5,7 +5,7 @@ public class Ask {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Entrez votre Nom:");
+        System.out.println("Entrez votre Prenom:");
         String nom = sc.nextLine();
 
         System.out.println("Bonjour, " + nom + "!");

@@ -1,4 +1,4 @@
-package Cours.exoObjet1;
+package exoObjet1;
 
 public class Voiture {
     String marque;

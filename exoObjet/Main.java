@@ -1,4 +1,4 @@
-package exoObjet1;
+package exoObjet;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,4 +13,5 @@ public class Main {
         maVoiture.freiner();
     }
 }
+
 

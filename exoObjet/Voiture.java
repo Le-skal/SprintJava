@@ -1,4 +1,4 @@
-package exoObjet1;
+package exoObjet;
 
 public class Voiture {
     String marque;

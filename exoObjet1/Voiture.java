@@ -1,9 +1,11 @@
-package exoObjet;
+package exoObjet1;
 
 public class Voiture {
     private String marque;
     private String modele;
     private String couleur;
+
+    public String[] colorAuthorized = {"rouge", "bleu", "vert", "jaune", "noir", "blanc"};
     
     public Voiture(String marque, String modele, String couleur) {
         this.marque = marque;

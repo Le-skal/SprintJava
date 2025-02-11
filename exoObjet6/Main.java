@@ -22,6 +22,10 @@ public class Main {
             System.out.println("3. Afficher la liste des étudiants");
             System.out.println("4. Quitter");
             System.out.print("Choisissez une option: ");
+            while (scanner.hasNextInt() == false) {
+                scanner.nextLine();
+                System.out.println("Option invalide, réessayez.");
+            }
             choix = scanner.nextInt();
             scanner.nextLine();
 

@@ -1,6 +1,5 @@
 package exoObjet4;
 
-// Classe parent Produit
 public class Produit {
     protected String nom;
     protected double prixHT;
@@ -11,13 +10,12 @@ public class Produit {
     }
 
     public double calculerPrix() {
-        return prixHT; // Prix par défaut sans TVA
+        return prixHT;
     }
 }
 
-// Classe Livre héritant de Produit
 class Livre extends Produit {
-    private static final double TVA_LIVRE = 0.05; // 5%
+    private static final double TVA_LIVRE = 0.05;
 
     public Livre(String nom, double prixHT) {
         super(nom, prixHT);
@@ -29,9 +27,8 @@ class Livre extends Produit {
     }
 }
 
-// Classe DVD héritant de Produit
 class DVD extends Produit {
-    private static final double TVA_DVD = 0.20; // 20%
+    private static final double TVA_DVD = 0.20;
 
     public DVD(String nom, double prixHT) {
         super(nom, prixHT);

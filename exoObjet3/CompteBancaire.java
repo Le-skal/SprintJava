@@ -12,14 +12,14 @@ public class CompteBancaire {
     public void deposer(double montant) {
         if (montant > 0) {
             this.solde += montant;
-            System.out.println (this.titulaire + ": " + montant + " a été déposé sur le compte.");
+            System.out.println (this.titulaire + ": " + montant + " a ete depose sur le compte.");
         }
     }
 
     public void retirer(double montant) {
         if ((this.solde - montant) > 0) {
             this.solde -= montant;
-            System.out.println (this.titulaire + ": " + montant + " a été retiré du compte.");
+            System.out.println (this.titulaire + ": " + montant + " a ete retire du compte.");
         } else {
             System.out.println(this.titulaire + ": Vous n'avez que " + this.solde + " sur votre compte .");
         }

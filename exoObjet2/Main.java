@@ -5,7 +5,7 @@ public class Main {
         Person p1 = new Person();
         p1.sePresenter();
 
-        Person p2 = new Person("Alice", 30);
+        Person p2 = new Person("Jack", 30);
         p2.sePresenter();
     }
 }

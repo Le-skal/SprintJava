@@ -2,7 +2,7 @@ package exoObjet4;
 
 public class Main {
     public static void main(String[] args) {
-        Produit livre = new Livre("Les Misérables", 20.0);
+        Produit livre = new Livre("Les Miserables", 20.0);
         Produit dvd = new DVD("Inception", 15.0);
         
         System.out.println("Prix final du livre: " + livre.calculerPrix() + " EUR");

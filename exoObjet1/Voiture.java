@@ -15,7 +15,7 @@ public class Voiture {
     
     
     public void accelerer() {
-        System.out.println("La voiture accélère.");
+        System.out.println("La voiture accelere.");
     }
     
     public void freiner() {

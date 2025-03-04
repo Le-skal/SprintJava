@@ -30,4 +30,8 @@ public class Utilisateur {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void __String() {
+        System.out.println("Nom: " + nom + ", Email: " + email);
+    }
 }

@@ -31,6 +31,14 @@ public class Utilisateur {
         this.email = email;
     }
 
+    public boolean checkName(String name){
+        if(!name.equals("")){
+            return true;
+        }
+
+        return false;
+    }
+
     public void __String() {
         System.out.println("Nom: " + nom + ", Email: " + email);
     }

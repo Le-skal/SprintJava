@@ -18,7 +18,9 @@ public class App {
                 System.out.println("2: Supprimer un utilisateur");
                 System.out.println("3: Modifier un utilisateur");
                 System.out.println("4: Afficher tous les utilisateurs");
-                System.out.println("5: Quitter");
+                System.out.println("5: Rechercher un utilisateur par nom ou email");
+                System.out.println("6: Sauver tous les utilisateurs");
+                System.out.println("7: Quitter");
                 System.out.print("Choisissez une option : ");
                 choix = scanner.nextInt();
                 scanner.nextLine(); // Pour consommer la nouvelle ligne
@@ -51,12 +53,20 @@ public class App {
                         gestionUtilisateurs.afficherUtilisateurs();
                         break;
                     case 5:
+                        System.out.print("Entrez un mot-clé pour rechercher un utilisateur : ");
+                        String motCle = scanner.nextLine();
+                        gestionUtilisateurs.rechercherUtilisateur(motCle);
+                        break;
+                    case 6:
+                        gestionUtilisateurs.toCSV();
+                        break;
+                    case 7:
                         System.out.println("Au revoir !");
                         break;
                     default:
                         System.out.println("Option invalide. Veuillez réessayer.");
                 }
-            } while (choix != 5);
+            } while (choix != 7);
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -106,7 +106,7 @@ public class GestionUtilisateur {
     }
 
     public void saveUtilisateursToCSV() {
-        String csvFile = "utilisateurs.csv";
+        String csvFile = "src\\main\\resources\\docs\\utilisateurs.csv";
         String sql = "SELECT * FROM utilisateurs";
 
         try (PreparedStatement pstmt = link.connexion.prepareStatement(sql);

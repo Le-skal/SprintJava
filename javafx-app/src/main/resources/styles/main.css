@@ -5,9 +5,16 @@
     -fx-background-repeat: no-repeat; /* Empêche la répétition de l'image */
 }
 
-.label {
-    -fx-text-fill:red;
-}
+    .label {
+        -fx-text-fill: linear-gradient(to right,  
+        rgb(255, 0, 0),  /* Red */ 
+        rgb(255, 255, 0), /* Yellow */ 
+        rgb(0, 255, 0),  /* Green */ 
+        rgb(0, 255, 255), /* Cyan */ 
+        rgb(0, 0, 255),  /* Blue */ 
+        rgb(255, 0, 255), /* Magenta */ 
+        rgb(255, 0, 0)   /* Back to Red */);
+    }
 
 .test {
     -fx-font-size: 34px;

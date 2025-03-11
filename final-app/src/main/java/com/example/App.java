@@ -22,6 +22,10 @@ public class App
             System.out.println("Que voulez vosu faire ?");
             System.out.println("1 - Lister les utilisateurs");
             System.out.println("2 - Ajouter un utilisateur");
+            System.out.println("3: Supprimer un utilisateur");
+            System.out.println("4: Modifier un utilisateur");
+            System.out.println("5: Rechercher un utilisateur par nom ou email");
+            System.out.println("6: Sauver tous les utilisateurs dans un csv");
             System.out.println("0 - Quitter");
             choice = sc.nextInt();
             
@@ -49,6 +53,46 @@ public class App
                         System.out.println(e.getMessage());
                     }
                     
+                    System.out.println("---------------------");
+                    break;
+                case 3:
+                    System.out.print("ID de l'utilisateur: ");
+                    int idDelete = sc.nextInt();
+                    gu.deleteUtilisateur(idDelete);
+                    System.out.println("---------------------");
+                    break;
+                
+                case 4:
+                    System.out.print("ID de l'utilisateur: ");
+                    int idUpdate = sc.nextInt();
+
+                    System.out.print("Nouveau Nom de l'utilisateur: ");
+                    sc.nextLine();
+                    String nom_new = sc.nextLine();
+
+                    System.out.print("Nouveau Email de l'utilisateur: ");
+                    String email_new = sc.nextLine();
+
+                    try {
+                        Utilisateur utilisateur = new Utilisateur(idUpdate, nom_new, email_new);
+                        gu.updateUtilisateur(utilisateur);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
+
+                    System.out.println("---------------------");
+                    break;
+                
+                case 5:
+                    System.out.print("Entrez un nom ou un email à rechercher: ");
+                    sc.nextLine();
+                    String searchTerm = sc.nextLine();
+                    gu.searchUtilisateur(searchTerm);
+                    System.out.println("---------------------");
+                    break;
+
+                case 6:
+                    gu.saveUtilisateursToCSV();
                     System.out.println("---------------------");
                     break;
             

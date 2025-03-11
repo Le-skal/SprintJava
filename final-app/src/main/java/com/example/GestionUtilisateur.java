@@ -8,6 +8,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+
 public class GestionUtilisateur {
     ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
     Connexion link = null;
@@ -88,7 +95,6 @@ public class GestionUtilisateur {
         ArrayList<Utilisateur> matchingUsers = new ArrayList<>();
             
         for (Utilisateur user : this.utilisateurs) {
-            // Check if the nom or email contains the search term (case-insensitive)
             if (user.getNom().toLowerCase().contains(searchTerm.toLowerCase()) ||
                 user.getEmail().toLowerCase().contains(searchTerm.toLowerCase())) {
                 matchingUsers.add(user);
@@ -106,31 +112,45 @@ public class GestionUtilisateur {
     }
 
     public void saveUtilisateursToCSV() {
+        this.reloadListUtilisateurs();
         String csvFile = "src\\main\\resources\\docs\\utilisateurs.csv";
-        String sql = "SELECT * FROM utilisateurs";
-
-        try (PreparedStatement pstmt = link.connexion.prepareStatement(sql);
-             ResultSet rs = pstmt.executeQuery();
-             FileWriter writer = new FileWriter(csvFile)) {
-
-            // Écrire l'en-tête du fichier CSV
-            writer.append("ID,Nom,Email,Cree le,Mis a jour le\n");
-
-            // Parcourir les résultats et écrire chaque ligne dans le fichier CSV
-            while (rs.next()) {
-                writer.append(String.valueOf(rs.getInt("id"))).append(",");
-                writer.append(rs.getString("nom")).append(",");
-                writer.append(rs.getString("email")).append(",");
-                writer.append(rs.getTimestamp("created_at").toString()).append(",");
-                writer.append(rs.getTimestamp("updated_at").toString()).append("\n");
+    
+        try (FileWriter writer = new FileWriter(csvFile)) {
+            writer.append("ID,Nom,Email\n");
+    
+            for (Utilisateur user : this.utilisateurs) {
+                writer.append(String.valueOf(user.getId())).append(",");
+                writer.append(user.getNom()).append(",");
+                writer.append(user.getEmail()).append("\n");
             }
-
             System.out.println("Exportation vers CSV terminée. Fichier sauvegardé à : " + csvFile);
-
-        } catch (SQLException | IOException e) {
+    
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    public void createTableView(TableView<Utilisateur> tableView) {
+        // Reload the list of users to ensure it is up to date
+        this.reloadListUtilisateurs();
 
+        // Get the columns from the TableView (defined in FXML)
+        @SuppressWarnings("unchecked")
+        TableColumn<Utilisateur, Integer> idColumn = (TableColumn<Utilisateur, Integer>) tableView.getColumns().get(0);
+        @SuppressWarnings("unchecked")
+        TableColumn<Utilisateur, String> nomColumn = (TableColumn<Utilisateur, String>) tableView.getColumns().get(1);
+        @SuppressWarnings("unchecked")
+        TableColumn<Utilisateur, String> emailColumn = (TableColumn<Utilisateur, String>) tableView.getColumns().get(2);
+
+        // Set the cell value factories for the columns
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nomColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        // Create an ObservableList from the ArrayList of utilisateurs
+        ObservableList<Utilisateur> data = FXCollections.observableArrayList(this.utilisateurs);
+
+        // Set the data to the TableView
+        tableView.setItems(data);
+    }
 }

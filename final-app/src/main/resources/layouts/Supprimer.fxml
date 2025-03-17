@@ -9,7 +9,7 @@
     spacing="10" 
     alignment="CENTER"
 >
-    <Label fx:id="supprimer_messageLabel" text="Bonjour, JavaFX hihi !"/>
+    <Label fx:id="supprimer_messageLabel" text="Supprimer des Utilisateurs !"/>
     <TextField fx:id="idField" promptText="Entrez l'id"/>
     <Button fx:id="supprimer_button_1" text="Supprimer"/>
     <Button fx:id="supprimer_button_0" text="Quiter"/>

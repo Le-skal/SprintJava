@@ -1,0 +1,168 @@
+/* General Styles */
+.root {
+    -fx-background-color: #020202;
+}
+
+/* Font Styles */
+.font-vt323 {
+    -fx-font-family: 'VT323';
+    -fx-font-size: 20px;
+}
+
+.font-fff-forward {
+    -fx-font-family: 'FFF Forward';
+    -fx-font-size: 12px;
+}
+
+/* Label Styles */
+.label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Button Styles */
+.button {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Darker Green */
+}
+
+.button:pressed {
+    -fx-background-color: #3d8b40; /* Even Darker Green */
+}
+
+/* TextField Styles */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.text-field:focused {
+    -fx-border-color: #4CAF50; /* Green */
+}
+
+/* TableView Styles */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+}
+
+/* VBox Styles */
+.vbox {
+    -fx-spacing: 10px;
+    -fx-padding: 20px;
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+}
+
+/* Message Label Styles */
+#messageLabel, #list_messageLabel, #ajouter_messageLabel, #supprimer_messageLabel, #updater_messageLabel {
+    -fx-text-fill: #ff0000; /* Red for error messages */
+}
+
+/* Custom Button Styles */
+#button_0 {
+    -fx-background-color: #f44336; /* Red */
+}
+
+#button_0:hover {
+    -fx-background-color: #d32f2f; /* Darker Red */
+}
+
+#button_0:pressed {
+    -fx-background-color: #b71c1c; /* Even Darker Red */
+}
+
+#button_5 {
+    -fx-background-color: #2196F3; /* Blue */
+}
+
+#button_5:hover {
+    -fx-background-color: #1976D2; /* Darker Blue */
+}
+
+#button_5:pressed {
+    -fx-background-color: #0D47A1; /* Even Darker Blue */
+}
+
+/* ComboBox Styles */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}
+
+.combo-box:hover {
+    -fx-border-color: #4CAF50; /* Green */
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-background-radius: 0 5px 5px 0;
+}
+
+.combo-box .arrow-button:hover {
+    -fx-background-color: #45a049; /* Darker Green */
+}
+
+.combo-box .arrow {
+    -fx-background-color: white;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #f0f0f0; /* Light Gray */
+}
+
+.combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+}
+
+.combo-box .list-view .list-cell:selected {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+}
+
+.combo-box .list-view .list-cell:filled:hover {
+    -fx-background-color: #f0f0f0; /* Light Gray */
+}

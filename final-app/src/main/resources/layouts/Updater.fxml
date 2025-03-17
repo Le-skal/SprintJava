@@ -9,9 +9,10 @@
     spacing="10" 
     alignment="CENTER"
 >
-    <Label fx:id="ajouter_messageLabel" text="Ajouter Des Utilisateurs !"/>
+    <Label fx:id="updater_messageLabel" text="Modifier des Utilisateurs !"/>
+    <TextField fx:id="idField" promptText="Entrez l'id"/>
     <TextField fx:id="nameField" promptText="Entrez le nom"/>
     <TextField fx:id="emailField" promptText="Entrez l'email"/>
-    <Button fx:id="ajouter_button_1" text="Ajouter"/>
-    <Button fx:id="ajouter_button_0" text="Quiter"/>
+    <Button fx:id="updater_button_1" text="Updater"/>
+    <Button fx:id="updater_button_0" text="Quiter"/>
 </VBox>

@@ -107,6 +107,7 @@ public class GestionUtilisateur {
             for (Utilisateur user : matchingUsers) {
                 System.out.println(user);
             }
+            utilisateurs = matchingUsers;
         }
 
     }
@@ -130,9 +131,13 @@ public class GestionUtilisateur {
         }
     }
 
-    public void createTableView(TableView<Utilisateur> tableView) {
+    public void createTableView(TableView<Utilisateur> tableView, String searchTerm) {
         // Reload the list of users to ensure it is up to date
         this.reloadListUtilisateurs();
+        if (searchTerm != null) {
+            searchUtilisateur(searchTerm);
+        }
+        
 
         // Get the columns from the TableView (defined in FXML)
         @SuppressWarnings("unchecked")

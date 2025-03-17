@@ -1,0 +1,64 @@
+/* styles.css (Add these styles to the existing file) */
+
+/* General styles for the root VBox */
+.root {
+    -fx-background-color: #020202;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+}
+
+/* Font Styles */
+.font-vt323 {
+    -fx-font-family: 'VT323';
+    -fx-font-size: 20px;
+}
+
+.font-fff-forward {
+    -fx-font-family: 'FFF Forward';
+    -fx-font-size: 12px;
+}
+
+/* Style for labels */
+.label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Style for buttons */
+.button {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Darker Green */
+}
+
+/* Style for text fields */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+.text-field:focused {
+    -fx-border-color: #4CAF50; /* Green */
+}
+
+/* Style for the message label */
+#supprimer_messageLabel {
+    -fx-text-fill: #ff0000; /* Red for error messages */
+    -fx-font-weight: normal;
+}
+
+/* Style for the stage title */
+.stage-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}

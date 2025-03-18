@@ -14,7 +14,6 @@
 >
     <Label fx:id="list_messageLabel" text="List des Utilisateurs !"/>
     <Button fx:id="list_button_0" text="Quiter"/>
-    <Button fx:id="list_button_1" text="Filtrer"/>
     <TextField fx:id="wordField" promptText="Entrez un mot"/>
     <TableView fx:id="userTableView">
         <columns>

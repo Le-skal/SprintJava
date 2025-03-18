@@ -77,15 +77,15 @@ public class App extends Application {
 
                 Label list_messageLabel = (Label) Root_list.lookup("#list_messageLabel");
                 Button list_button_0 = (Button) Root_list.lookup("#list_button_0");
-                Button list_button_1 = (Button) Root_list.lookup("#list_button_1");
                 TextField wordField = (TextField) Root_list.lookup("#wordField");
                 TableView<Utilisateur> userTableView = (TableView<Utilisateur>) Root_list.lookup("#userTableView");
 
-                gu.createTableView(userTableView,"");
                 
-                list_button_1.setOnAction(event2 -> {
-                    String searchText = wordField.getText(); // Get the text from the wordField
-                    gu.createTableView(userTableView, searchText); // Refresh the table view with the new search text
+                gu.createTableView(userTableView, "");
+
+                wordField.textProperty().addListener((observable, oldValue, newValue) -> {
+                    String searchText = newValue; 
+                    gu.createTableView(userTableView, searchText);
                 });
   
   

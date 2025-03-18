@@ -199,12 +199,18 @@ public class App extends Application {
                         supprimer_messageLabel.setText("Veuillez remplir tous les champs !");
                         return;
                     }
-
+                    
+                    
                     try {
                         int id = Integer.parseInt(idText);
+
+                        if (!gu.utilisateurExiste(id)) {
+                            supprimer_messageLabel.setText("L'utilisateur avec cet ID n'existe pas !");
+                            return;
+                        }
+
                         gu.deleteUtilisateur(id);
                         supprimer_messageLabel.setText("Utilisateur supprimer avec succès !");
-        
                     } catch (IllegalArgumentException e) {
                         supprimer_messageLabel.setText(e.getMessage());
                     }

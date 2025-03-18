@@ -50,6 +50,23 @@ public class GestionUtilisateur {
         }
     }
 
+    public boolean utilisateurExiste(int id) {        
+        try {
+            String sql = "SELECT COUNT(*) FROM utilisateurs WHERE id = ?";
+            PreparedStatement pstmt = this.link.connexion.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+
     public void addUtilisateurs(Utilisateur utilisateur) {
         try {
             String sqlInsert = "INSERT INTO utilisateurs (nom, email) VALUES (?, ?)";

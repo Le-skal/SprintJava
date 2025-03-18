@@ -72,7 +72,6 @@ public class App extends Application {
 
         button_1.setOnAction(event -> {
             try {
-                primaryStage.close();
                 VBox Root_list = FXMLLoader.load(getClass().getResource("/layouts/list.fxml"));
 
                 Label list_messageLabel = (Label) Root_list.lookup("#list_messageLabel");
@@ -93,7 +92,6 @@ public class App extends Application {
                     Stage currentStage = (Stage) list_button_0.getScene().getWindow();
                     currentStage.close();
 
-                    primaryStage.show();
                 });
 
                 Scene Scene_list = new Scene(Root_list, 500, 600);

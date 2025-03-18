@@ -272,6 +272,12 @@ public class App extends Application {
 
                     try {
                         int id = Integer.parseInt(idText);
+
+                        if (!gu.utilisateurExiste(id)) {
+                            updater_messageLabel.setText("Aucun Utilisateur avec cet ID existe !");
+                            return;
+                        }
+
                         Utilisateur utilisateur = new Utilisateur(id, nameText, emailText);
                         gu.updateUtilisateur(utilisateur);
                         updater_messageLabel.setText("Utilisateur updater avec succès !");
